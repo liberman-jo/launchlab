@@ -1,0 +1,89 @@
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["driverAdapters"]
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id         String     @id @default(cuid())
+  email      String     @unique
+  password   String
+  name       String
+  goal       String?
+  createdAt  DateTime   @default(now())
+  businesses Business[]
+}
+
+model Business {
+  id           String           @id @default(cuid())
+  userId       String
+  user         User             @relation(fields: [userId], references: [id], onDelete: Cascade)
+  name         String
+  tagline      String?
+  location     String
+  budget       Float
+  hoursPerWeek Int
+  status       String           @default("setup")
+  ideaData     String           // JSON — full idea object from AI
+  intakeData   String           // JSON — intake form values
+  createdAt    DateTime         @default(now())
+  updatedAt    DateTime         @updatedAt
+  tasks        Task[]
+  outputs      BusinessOutput[]
+  integrations Integration[]
+
+  @@index([userId])
+}
+
+model Task {
+  id            String   @id @default(cuid())
+  businessId    String
+  business      Business @relation(fields: [businessId], references: [id], onDelete: Cascade)
+  name          String
+  category      String
+  description   String
+  status        String   @default("pending")
+  mode          String   @default("auto")
+  estimatedTime String?
+  estimatedCost String?
+  canAutomate   Boolean  @default(false)
+  steps         String   @default("[]")
+  outputData    String?  // JSON — editable key-value output
+  sortOrder     Int      @default(0)
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  @@index([businessId])
+}
+
+model BusinessOutput {
+  id         String   @id @default(cuid())
+  businessId String
+  business   Business @relation(fields: [businessId], references: [id], onDelete: Cascade)
+  type       String   // website | business_plan | social_content | email_templates | pitch_deck
+  title      String
+  content    String   // actual content — HTML, markdown, etc.
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  @@index([businessId])
+}
+
+model Integration {
+  id           String   @id @default(cuid())
+  businessId   String
+  business     Business @relation(fields: [businessId], references: [id], onDelete: Cascade)
+  provider     String   // stripe | google | calendly | namecheap
+  status       String   @default("disconnected")
+  accessToken  String?
+  refreshToken String?
+  metadata     String?  // JSON — provider-specific data
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  @@unique([businessId, provider])
+}

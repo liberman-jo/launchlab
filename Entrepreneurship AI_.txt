@@ -1,0 +1,46 @@
+﻿Entrepreneurship AI:
+Working Title: LaunchLab
+
+
+Opening page asks for login with a name, username, and some goals that the person would have, and the skills they have
+
+
+User Interface should be two-fold. Initially, the user must see that there are four agents or phases in total: idea generation, creation, marketing, and management. However, when they have generated and created their business they should be able to access a different interface which includes a hub or home page for that business where they would just need to switch between the home page, marketing page, and the management page. I am not sure how to best do this- but the focus should definitely be on making this as user friendly as possible and show a nice flow from stage to stage. Users should also be able to create multiple businesses and navigate between business and also back to the full interface page which includes discovery and creation too. I think it would be best to have a “make my business” button or something which initially navigates the user to the discovery page, then naturally switches them to the creation page but they would be able to navigate back to the discovery page at any time, and then they would automatically be taken to the overall business management/marketing/home page but have access to “edit” their business which would be similar to the creation page.
+
+
+Phase 1: Idea Generation
+* At the top budget, time commitment, and ‘genre’ or area they are interested in starting a business in (such as writing, e-commerce, fashion, tech, etc.)
+   * This can be modified at any time and will refresh the outputs
+
+
+* Clear choice to input your own idea
+* Clear option to have Agent #1 (working name: Discovery Agent) come up with ideas
+
+
+* Clear screen where chosen idea or ideas are displayed and then each can be analyzed for success
+* If chosen to be analyzed, a very clear report is generated with insights that can each be expanded
+   * Business idea is analyzed for success depending on other competitors in the area, time required, effort required, cost depending on inputed budget, match with inputted skills, as well as other market analytics (choose business theories and use each of them to give analyze the business and give it a likelihood of success score)
+* Then, the user can choose an idea
+
+
+When idea is chosen, they are taken to the Agent #2 (working name: Creation Agent)
+Phase 2: Creation
+* This should be more in-depth of an interface than the idea generation phase
+* Here users can input tasks that they need to complete to start up their new business, their business plan or model as created in the first phase should be visible for reference
+* They can request suggested tasks based on the business plan
+* Both tasks that users input and that are suggested should be determined whether they cna be automated- something like making a website should have an automated option, whereas something like acquiring a license should have a “guided” option, as many tasks as possible should be given the option to be automatic, the rest should have a guided option, and all tasks should have a manual option regardless.
+   * If a task is completed automatically: output should be shown to the user, available for download or an equivalent, and be able to be customized through prompting. When something is automatically completed, and chosen as the final created version, it should be added to the business hub. For example, if a website is chosen to be automatically generated, then through prompts customized slightly, and then a final version is chosen, it would then be populated in the hub as the final working version.
+      * As many as possible, automatic outputs should be created in such a way that the management and marketing agents have access to modify them. For example, if a website is automatically generated, it would be hosted through a platform and become live, and this would happen in such a way that the api or whatever relevant access is already saved in the hub and the other agents would be able to run statistics, and change the website to be more seo friendly, or more engaging, etc based on report results.
+* The user should be able to complete as many tasks as they desire. If they choose to first create only the digital platforms for an in person business before getting licenses, physical supplies, etc. the interface should make it feel complete. Likewise, they should be able to re-access the creation agent at any time to finish the tasks they didn’t. These should stand out as “to-do’s” until marked completed and inputted into the hub.
+* Everything should be made to seem as simple and fast as possible, no obfuscations. Even a tedious task like getting a business license or something like that should be made to seem incredibly fast and easy to complete. There can even be an auto option where all the user has to do is click on links, click approve, and then click on another link, and etc. if they choose manual they should still be given a brief description of what is required of them to manually complete. But for guided options, everything should flow very naturally with the focus on minimal input from the user, of course, with the automatic option, the user should not have to do anything except customize and verify output.
+
+
+Phase 3 & 4: Management and Marketing
+* At this point, the interface should signal that the business is complete. There is technically no reason for the user to have to navigate back to the creation or idea generation phases unless some task is outstanding, although this should also be able to be completed in the management phase. Now, this is the daily interface to which the user will return on a daily or more frequent basis to ensure their business is operating properly.
+* Management:
+   * The management agent’s role is to fully operate the business. A daily report of analytics should be generated, as well as on command if requested. The agent should be aware of every platform, every stream of income, every expense, and every opportunity of profit. Again, here the user should have the option to manually handle management of the business, guided operations, or automatically completed daily management. Management should include cataloging expenses, losses, profit, and revenue. All of the finances. Additionally, the management agent, should know and suggest (if set to manual or guided), or complete (if set to automatic), any upgrades to the business, such as reinvesting profit. The management agent’s interface should look relatively more sophisticated compared to the creation and idea generation agents. This should be the place that the user can at any time go to and see exactly what is going on in their business immediately.
+* Marketing:
+   * The marketing agent’s role is to make the business money. This is the hardest part. The marketing agent should run a daily report and analysis on business operations. As opposed to the management agent, for example, if it catalogues the amount of views a post got, it should also identify a marketing strategy based on these analytics. Again, this agent can be set to manual, guided (suggesting), or automatic. In the manual mode, the report is generated, insights are shown, and a plan of action is created, although it is up to the user to implement the changes. In the guided mode, everything occurs the same way as in manual mode, however, the agent likewise produces example outputs that the user can easily implement although every decision is customizable and the user can implement it themselves although links are given. In automatic mode, the report is generated, insights are shown, a plan of action is created, and then the actions are completed whether it is a post on social media, changes to the website, change in language, etc. In automatic mode, the user should not have to do anything themselves unless it requires the purchase or change of anything physical. The marketing agent should have complete access to all passwords, emails, websites, social medias, and anything else digital and be able to modify these based on insights.
+
+
+* Finally, there should be a business configuration page which includes all relevant APIs, secrets, passwords, profiles, usernames, etc. That way the user can easily see which platforms are connected even if they did not actually create any of them and have everything set to automatic. If some tasks are set to manual or guided, the user should be able to quickly access this information.
